@@ -40,7 +40,7 @@ pipelineJob('AWS/NETWORKING/dev-demo-terraform-vpc') {
             url('https://github.com/rafstef/demo-terraform-vpc')
             scriptPath("Jenkinsfile")
           }
-          branch('*/dev')
+          branch('*/develop')
         }
       }
       lightweight()
