@@ -1,10 +1,10 @@
-pipelineJob('AWS/NETWORKING/PROD/prod-demo-terraform-vpc') {
+pipelineJob('AWS/NETWORKING/PROD/prod-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-terraform-vpc')
+            url('https://github.com/rafstef/demo-terraform-ec2')
             scriptPath("pipelines/Jenkinsfile")
           }
           branch('*/master')
@@ -14,13 +14,13 @@ pipelineJob('AWS/NETWORKING/PROD/prod-demo-terraform-vpc') {
     }
   }
 }
-pipelineJob('AWS/NETWORKING/NOPROD/preprod-demo-terraform-vpc') {
+pipelineJob('AWS/NETWORKING/NOPROD/preprod-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-terraform-vpc')
+            url('https://github.com/rafstef/demo-terraform-ec2')
             scriptPath("pipelines/Jenkinsfile")
           }
           branch('*/release')
@@ -30,13 +30,13 @@ pipelineJob('AWS/NETWORKING/NOPROD/preprod-demo-terraform-vpc') {
     }
   }
 }
-pipelineJob('AWS/NETWORKING/NOPROD/preprod-destroy-demo-terraform-vpc') {
+pipelineJob('AWS/NETWORKING/NOPROD/preprod-destroy-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-terraform-vpc')
+            url('https://github.com/rafstef/demo-terraform-ec2')
             scriptPath("pipelines/destroy.groovy")
           }
           branch('*/release')
@@ -52,13 +52,13 @@ pipelineJob('AWS/NETWORKING/NOPROD/preprod-destroy-demo-terraform-vpc') {
   }
 }
 
-pipelineJob('AWS/NETWORKING/NOPROD/dev-destroy-demo-terraform-vpc') {
+pipelineJob('AWS/NETWORKING/NOPROD/dev-destroy-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-terraform-vpc')
+            url('https://github.com/rafstef/demo-terraform-ec2')
             scriptPath("pipelines/destroy.groovy")
           }
           branch('*/develop')
@@ -68,13 +68,13 @@ pipelineJob('AWS/NETWORKING/NOPROD/dev-destroy-demo-terraform-vpc') {
     }
   }
 }
-pipelineJob('AWS/NETWORKING/NOPROD/dev-demo-terraform-vpc') {
+pipelineJob('AWS/NETWORKING/NOPROD/dev-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-terraform-vpc')
+            url('https://github.com/rafstef/demo-terraform-ec2')
             scriptPath("pipelines/Jenkinsfile")
           }
           branch('*/develop')
