@@ -29,6 +29,11 @@ pipelineJob('AWS/NETWORKING/preprod-demo-terraform-vpc') {
       lightweight()
     }
   }
+  triggers {
+    gitlabPush {
+      buildOnMergeRequestEvents(boolean buildOnMergeRequestEvents = true)
+    }
+  }
 }
 
 pipelineJob('AWS/NETWORKING/dev-demo-terraform-vpc') {
