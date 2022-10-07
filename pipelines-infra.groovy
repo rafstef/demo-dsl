@@ -1,4 +1,4 @@
-pipelineJob('AWS/NETWORKING/PROD/prod-demo-terraform-ec2') {
+pipelineJob('AWS/INFRA/PROD/prod-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
@@ -14,7 +14,7 @@ pipelineJob('AWS/NETWORKING/PROD/prod-demo-terraform-ec2') {
     }
   }
 }
-pipelineJob('AWS/NETWORKING/NOPROD/preprod-demo-terraform-ec2') {
+pipelineJob('AWS/INFRA/NOPROD/preprod-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
@@ -30,7 +30,7 @@ pipelineJob('AWS/NETWORKING/NOPROD/preprod-demo-terraform-ec2') {
     }
   }
 }
-pipelineJob('AWS/NETWORKING/NOPROD/preprod-destroy-demo-terraform-ec2') {
+pipelineJob('AWS/INFRA/NOPROD/preprod-destroy-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
@@ -52,7 +52,7 @@ pipelineJob('AWS/NETWORKING/NOPROD/preprod-destroy-demo-terraform-ec2') {
   }
 }
 
-pipelineJob('AWS/NETWORKING/NOPROD/dev-destroy-demo-terraform-ec2') {
+pipelineJob('AWS/INFRA/NOPROD/dev-destroy-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
@@ -68,7 +68,7 @@ pipelineJob('AWS/NETWORKING/NOPROD/dev-destroy-demo-terraform-ec2') {
     }
   }
 }
-pipelineJob('AWS/NETWORKING/NOPROD/dev-demo-terraform-ec2') {
+pipelineJob('AWS/INFRA/NOPROD/dev-demo-terraform-ec2') {
   definition {
     cpsScm {
       scm {
