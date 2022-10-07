@@ -20,17 +20,17 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
         }
-        // stage('pipelines') {
-        //     steps {
-        //         jobDsl scriptText: 'job("pipelines")'
-        //         jobDsl targets: ['pipelines.groovy'].join('\n'),
-        //         removedJobAction: 'DELETE',
-        //         removedViewAction: 'DELETE',
-        //         lookupStrategy: 'SEED_JOB'
+        stage('pipelines') {
+            steps {
+                jobDsl scriptText: 'job("pipelines")'
+                jobDsl targets: ['pipelines.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
 
-        //     }
+            }
 
-   //     }
+       }
     }
 
     post {
