@@ -1,11 +1,10 @@
-pipelineJob('AWS/rke/rke-deploy') {
+pipelineJob('AWS/NETWORKING/PROD') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('git@bitbucket.org:raffaelestefanile/demo-rke.git')
-            credentials('bitbucket')
+            url('https://github.com/rafstef/demo-terraform-vpc')
             scriptPath("Jenkinsfile")
           }
           branch('*/master')
@@ -15,17 +14,16 @@ pipelineJob('AWS/rke/rke-deploy') {
     }
   }
 }
-pipelineJob('AWS/rke/rke-deploy-minimal') {
+pipelineJob('AWS/NETWORKING/PREPROD') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('git@bitbucket.org:raffaelestefanile/demo-rke.git')
-            credentials('bitbucket')
-            scriptPath("Jenkinsfile_minimal.groovy")
+            url('https://github.com/rafstef/demo-terraform-vpc')
+            scriptPath("Jenkinsfile")
           }
-          branch('*/master')
+          branch('*/release')
         }
       }
       lightweight()
@@ -33,73 +31,16 @@ pipelineJob('AWS/rke/rke-deploy-minimal') {
   }
 }
 
-pipelineJob('AWS/rke/rke-destroy') {
+pipelineJob('AWS/NETWORKING/DEV') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('git@bitbucket.org:raffaelestefanile/demo-rke.git')
-            credentials('bitbucket')
-            scriptPath("Jenkinsfile_destroy.groovy")
+            url('https://github.com/rafstef/demo-terraform-vpc')
+            scriptPath("Jenkinsfile")
           }
-          branch('*/master')
-        }
-      }
-      lightweight()
-    }
-  }
-}
-
-
-
-pipelineJob('AWS/rke/rke-AxaStyle') {
-  definition {
-    cpsScm {
-      scm {
-        git {
-          remote {
-            url('git@bitbucket.org:raffaelestefanile/demo-rke.git')
-            credentials('bitbucket')
-            scriptPath("Jenkinsfile_AxaStyle.groovy")
-          }
-          branch('*/master')
-        }
-      }
-      lightweight()
-    }
-  }
-}
-
-pipelineJob('GCP/gke/gke-deploy-minimal') {
-  definition {
-    cpsScm {
-      scm {
-        git {
-          remote {
-            url('git@bitbucket.org:raffaelestefanile/demo-gke.git')
-            credentials('bitbucket')
-            scriptPath("Jenkinsfile_minimal.groovy")
-          }
-          branch('*/master')
-        }
-      }
-      lightweight()
-    }
-  }
-}
-
-pipelineJob('GCP/gke/gke-destroy') {
-  definition {
-    cpsScm {
-      scm {
-        git {
-          remote {
-            url('git@bitbucket.org:raffaelestefanile/demo-gke.git')
-            credentials('bitbucket')
-            scriptPath("Jenkinsfile_destroy.groovy")
-          }
-          branch('*/master')
+          branch('*/dev')
         }
       }
       lightweight()
