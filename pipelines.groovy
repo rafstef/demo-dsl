@@ -1,11 +1,11 @@
-pipelineJob('AWS/NETWORKING/prod-demo-terraform-vpc') {
+pipelineJob('AWS/NETWORKING/PROD/prod-demo-terraform-vpc') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
             url('https://github.com/rafstef/demo-terraform-vpc')
-            scriptPath("Jenkinsfile")
+            scriptPath("pipelines/Jenkinsfile")
           }
           branch('*/master')
         }
@@ -14,14 +14,30 @@ pipelineJob('AWS/NETWORKING/prod-demo-terraform-vpc') {
     }
   }
 }
-pipelineJob('AWS/NETWORKING/preprod-demo-terraform-vpc') {
+pipelineJob('AWS/NETWORKING/NOPROD/preprod-demo-terraform-vpc') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
             url('https://github.com/rafstef/demo-terraform-vpc')
-            scriptPath("Jenkinsfile")
+            scriptPath("pipelines/Jenkinsfile")
+          }
+          branch('*/release')
+        }
+      }
+      lightweight()
+    }
+  }
+}
+pipelineJob('AWS/NETWORKING/NOPROD/preprod-destroy-demo-terraform-vpc') {
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url('https://github.com/rafstef/demo-terraform-vpc')
+            scriptPath("pipelines/destroy.groovy")
           }
           branch('*/release')
         }
@@ -36,14 +52,30 @@ pipelineJob('AWS/NETWORKING/preprod-demo-terraform-vpc') {
   }
 }
 
-pipelineJob('AWS/NETWORKING/dev-demo-terraform-vpc') {
+pipelineJob('AWS/NETWORKING/NOPROD/dev-destroy-demo-terraform-vpc') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
             url('https://github.com/rafstef/demo-terraform-vpc')
-            scriptPath("Jenkinsfile")
+            scriptPath("pipelines/destroy.groovy")
+          }
+          branch('*/develop')
+        }
+      }
+      lightweight()
+    }
+  }
+}
+pipelineJob('AWS/NETWORKING/NOPROD/dev-demo-terraform-vpc') {
+  definition {
+    cpsScm {
+      scm {
+        git {
+          remote {
+            url('https://github.com/rafstef/demo-terraform-vpc')
+            scriptPath("pipelines/Jenkinsfile")
           }
           branch('*/develop')
         }
