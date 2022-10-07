@@ -1,4 +1,4 @@
-pipelineJob('AWS/NETWORKING/PROD') {
+pipelineJob('AWS/NETWORKING/prod-demo-terraform-vpc') {
   definition {
     cpsScm {
       scm {
@@ -14,7 +14,7 @@ pipelineJob('AWS/NETWORKING/PROD') {
     }
   }
 }
-pipelineJob('AWS/NETWORKING/PREPROD') {
+pipelineJob('AWS/NETWORKING/preprod-demo-terraform-vpc') {
   definition {
     cpsScm {
       scm {
@@ -31,7 +31,7 @@ pipelineJob('AWS/NETWORKING/PREPROD') {
   }
 }
 
-pipelineJob('AWS/NETWORKING/DEV') {
+pipelineJob('AWS/NETWORKING/dev-demo-terraform-vpc') {
   definition {
     cpsScm {
       scm {
