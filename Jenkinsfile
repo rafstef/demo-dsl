@@ -20,16 +20,25 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
         }
-        stage('pipelines') {
+        stage('pipelines-networking') {
             steps {
-                jobDsl scriptText: 'job("pipelines")'
-                jobDsl targets: ['pipelines.groovy'].join('\n'),
+                jobDsl scriptText: 'job("pipelines-networking")'
+                jobDsl targets: ['pipelines-networking.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
 
             }
+       }
+        stage('pipelines-infra') {
+            steps {
+                jobDsl scriptText: 'job("pipelines-infra")'
+                jobDsl targets: ['pipelines-infra.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
 
+            }
        }
     }
 
