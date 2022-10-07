@@ -1,0 +1,16 @@
+folder('AWS'){
+    displayName('AWS')
+    description('AWS')
+}
+folder('AWS/rke'){
+    displayName('rke')
+    description('rke')
+}
+folder('GCP'){
+    displayName('GCP')
+    description('GCP')
+}
+folder('GCP/gke'){
+    displayName('gke')
+    description('gke')
+}
