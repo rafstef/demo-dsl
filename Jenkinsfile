@@ -23,7 +23,7 @@ pipeline {
         stage('pipelines-networking') {
             steps {
                 jobDsl scriptText: 'job("pipelines-networking")'
-                jobDsl targets: ['pipelines-networking.groovy'].join('\n'),
+                jobDsl targets: ['pipelinesNetworking.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
@@ -33,7 +33,7 @@ pipeline {
         stage('pipelines-infra') {
             steps {
                 jobDsl scriptText: 'job("pipelines-infra")'
-                jobDsl targets: ['pipelines-infra.groovy'].join('\n'),
+                jobDsl targets: ['pipelinesInfra.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
