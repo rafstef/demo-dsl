@@ -4,9 +4,7 @@ import jenkins.model.GlobalConfiguration
 // disable Job DSL script approval
 
 GlobalConfiguration.all().get(GlobalJobDslSecurityConfiguration.class).useScriptSecurity=false
-
 GlobalConfiguration.all().get(GlobalJobDslSecurityConfiguration.class).save()
-
 
 pipeline {
     agent any
@@ -36,7 +34,6 @@ pipeline {
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
-
             }
        }
         stage('FolderModular') {
@@ -55,10 +52,8 @@ pipeline {
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
-
             }
        }
-
         stage('pipelines-networking') {
             steps {
                 jobDsl scriptText: 'job("DSL/pipelines-networking")'
@@ -66,7 +61,6 @@ pipeline {
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
-
             }
        }
         stage('pipelines-infra') {
@@ -76,12 +70,9 @@ pipeline {
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
-
             }
        }
-
     }
-
     post {
         // Clean after build
         always {
