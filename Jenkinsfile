@@ -39,9 +39,9 @@ pipeline {
 
     //         }
     //    }
-        stage('FolderMonolithic') {
+        stage('FolderModular') {
             steps {
-                jobDsl scriptText: 'job("folders-modular")'
+                jobDsl scriptText: 'job("DSL/folders-modular")'
                 jobDsl targets: ['foldersModular.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
@@ -50,7 +50,7 @@ pipeline {
         }
         stage('pipelines-modular') {
             steps {
-                jobDsl scriptText: 'job("pipelines-modular")'
+                jobDsl scriptText: 'job("DSL/pipelines-modular")'
                 jobDsl targets: ['pipelinesModular.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
