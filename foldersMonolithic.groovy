@@ -1,8 +1,8 @@
 
 
 folder('AWS/MONOLITHIC'){
-    displayName('NETWORKING')
-    description('NETWORKING')
+    displayName('MONOLITHIC')
+    description('MONOLITHIC')
 }
 folder('AWS/MONOLITHIC/NOPROD'){
     displayName('NOPROD')
