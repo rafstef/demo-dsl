@@ -14,7 +14,7 @@ pipeline {
         stage('FolderRoot') {
             steps {
                 jobDsl scriptText: 'job("foldersRoot")'
-                jobDsl targets: ['foldersRoot.groovy'].join('\n'),
+                jobDsl targets: ['folders-root.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('FolderMonolithic') {
             steps {
-                jobDsl scriptText: 'job("foldersMonolithic")'
+                jobDsl scriptText: 'job("folders-monolithic")'
                 jobDsl targets: ['foldersMonolithic.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
