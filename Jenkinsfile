@@ -20,6 +20,17 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
         }
+        stage('pipelines-monolithic') {
+            steps {
+                jobDsl scriptText: 'job("pipelines-monolithic")'
+                jobDsl targets: ['pipelinesMonolithic.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+
+            }
+       }
+/*
         stage('pipelines-networking') {
             steps {
                 jobDsl scriptText: 'job("pipelines-networking")'
@@ -41,7 +52,7 @@ pipeline {
             }
        }
     }
-
+*/
     post {
         // Clean after build
         always {
