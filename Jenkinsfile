@@ -13,8 +13,8 @@ pipeline {
     stages {
         stage('FolderRoot') {
             steps {
-                jobDsl scriptText: 'job("foldersRoot")'
-                jobDsl targets: ['folders-root.groovy'].join('\n'),
+                jobDsl scriptText: 'job("folders-root")'
+                jobDsl targets: ['foldersRoot.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
