@@ -22,7 +22,7 @@ pipeline {
         }
         stage('FolderMonolithic') {
             steps {
-                jobDsl scriptText: 'job("folders-monolithic")'
+                jobDsl scriptText: 'job("DSL/folders-monolithic")'
                 jobDsl targets: ['foldersMonolithic.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
@@ -31,7 +31,7 @@ pipeline {
         }
         stage('pipelines-monolithic') {
             steps {
-                jobDsl scriptText: 'job("pipelines-monolithic")'
+                jobDsl scriptText: 'job("DSL/pipelines-monolithic")'
                 jobDsl targets: ['pipelinesMonolithic.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
@@ -61,7 +61,7 @@ pipeline {
 
         stage('pipelines-networking') {
             steps {
-                jobDsl scriptText: 'job("pipelines-networking")'
+                jobDsl scriptText: 'job("DSL/pipelines-networking")'
                 jobDsl targets: ['pipelinesNetworking.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
@@ -71,7 +71,7 @@ pipeline {
        }
         stage('pipelines-infra') {
             steps {
-                jobDsl scriptText: 'job("pipelines-infra")'
+                jobDsl scriptText: 'job("DSL/pipelines-infra")'
                 jobDsl targets: ['pipelinesInfra.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
