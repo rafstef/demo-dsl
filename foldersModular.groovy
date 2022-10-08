@@ -1,7 +1,7 @@
 
 folder('AWS/MODULAR'){
-    displayName('MONOLITHIC')
-    description('MONOLITHIC')
+    displayName('MODULAR')
+    description('MODULAR')
 }
 folder('AWS/MODULAR/NOPROD'){
     displayName('NOPROD')
