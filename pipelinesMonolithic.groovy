@@ -24,7 +24,7 @@ pipelineJob('AWS/MONOLITHIC/PROD/preprod-destroy-demo-terraform-monolithic') {
             url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/destroy.groovy")
           }
-          branch('*/release')
+          branch('*/master')
         }
       }
       lightweight()
@@ -41,7 +41,7 @@ pipelineJob('AWS/MONOLITHIC/NOPROD/preprod-demo-terraform-monolithic') {
             url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/Jenkinsfile")
           }
-          branch('*/master')
+          branch('*/release')
         }
       }
       lightweight()
@@ -75,7 +75,7 @@ pipelineJob('AWS/MONOLITHIC/NOPROD/dev-demo-terraform-monolithic') {
             url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/Jenkinsfile")
           }
-          branch('*/master')
+          branch('*/develop')
         }
       }
       lightweight()
@@ -92,7 +92,7 @@ pipelineJob('AWS/MONOLITHIC/NOPROD/dev-destroy-demo-terraform-monolithic') {
             url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/destroy.groovy")
           }
-          branch('*/release')
+          branch('*/develop')
         }
       }
       lightweight()

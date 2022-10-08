@@ -24,7 +24,7 @@ pipelineJob('AWS/MODULAR/PROD/prod-destroy-demo-terraform-modular') {
             url('https://github.com/rafstef/demo-terraform-modular')
             scriptPath("pipelines/destroy.groovy")
           }
-          branch('*/release')
+          branch('*/master')
         }
       }
       lightweight()
@@ -41,7 +41,7 @@ pipelineJob('AWS/MODULAR/NOPROD/preprod-demo-terraform-modular') {
             url('https://github.com/rafstef/demo-terraform-modular')
             scriptPath("pipelines/Jenkinsfile")
           }
-          branch('*/master')
+          branch('*/release')
         }
       }
       lightweight()
@@ -75,7 +75,7 @@ pipelineJob('AWS/MODULAR/NOPROD/dev-demo-terraform-modular') {
             url('https://github.com/rafstef/demo-terraform-modular')
             scriptPath("pipelines/Jenkinsfile")
           }
-          branch('*/master')
+          branch('*/develop')
         }
       }
       lightweight()
@@ -92,7 +92,7 @@ pipelineJob('AWS/MODULAR/NOPROD/dev-destroy-demo-terraform-modular') {
             url('https://github.com/rafstef/demo-terraform-modular')
             scriptPath("pipelines/destroy.groovy")
           }
-          branch('*/release')
+          branch('*/develop')
         }
       }
       lightweight()
