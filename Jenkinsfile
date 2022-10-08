@@ -20,19 +20,38 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
         }
+    //     stage('FolderMonolithic') {
+    //         steps {
+    //             jobDsl scriptText: 'job("folders-monolithic")'
+    //             jobDsl targets: ['foldersMonolithic.groovy'].join('\n'),
+    //             removedJobAction: 'DELETE',
+    //             removedViewAction: 'DELETE',
+    //             lookupStrategy: 'SEED_JOB'
+    //         }
+    //     }
+    //     stage('pipelines-monolithic') {
+    //         steps {
+    //             jobDsl scriptText: 'job("pipelines-monolithic")'
+    //             jobDsl targets: ['pipelinesMonolithic.groovy'].join('\n'),
+    //             removedJobAction: 'DELETE',
+    //             removedViewAction: 'DELETE',
+    //             lookupStrategy: 'SEED_JOB'
+
+    //         }
+    //    }
         stage('FolderMonolithic') {
             steps {
-                jobDsl scriptText: 'job("folders-monolithic")'
-                jobDsl targets: ['foldersMonolithic.groovy'].join('\n'),
+                jobDsl scriptText: 'job("folders-modular")'
+                jobDsl targets: ['foldersModular.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
             }
         }
-        stage('pipelines-monolithic') {
+        stage('pipelines-modular') {
             steps {
-                jobDsl scriptText: 'job("pipelines-monolithic")'
-                jobDsl targets: ['pipelinesMonolithic.groovy'].join('\n'),
+                jobDsl scriptText: 'job("pipelines-modular")'
+                jobDsl targets: ['pipelinesModular.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
