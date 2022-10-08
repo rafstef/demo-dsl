@@ -11,10 +11,19 @@ GlobalConfiguration.all().get(GlobalJobDslSecurityConfiguration.class).save()
 pipeline {
     agent any
     stages {
-        stage('Folder') {
+        stage('FolderRoot') {
             steps {
-                jobDsl scriptText: 'job("folders")'
-                jobDsl targets: ['folders.groovy'].join('\n'),
+                jobDsl scriptText: 'job("foldersRoot")'
+                jobDsl targets: ['foldersRoot.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+            }
+        }
+        stage('FolderMonolithic') {
+            steps {
+                jobDsl scriptText: 'job("foldersMonolithic")'
+                jobDsl targets: ['foldersMonolithic.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
@@ -51,8 +60,10 @@ pipeline {
 
             }
        }
-    }
+
 */
+    }
+
     post {
         // Clean after build
         always {

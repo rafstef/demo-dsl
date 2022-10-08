@@ -15,7 +15,7 @@ pipelineJob('AWS/MONOLITHICS/PROD/prod-demo-terraform-monolithic') {
   }
 }
 
-pipelineJob('AWS/INFRA/PROD/preprod-destroy-demo-monolithic') {
+pipelineJob('AWS/MONOLITHICS/PROD/preprod-destroy-demo-monolithic') {
   definition {
     cpsScm {
       scm {
@@ -49,7 +49,7 @@ pipelineJob('AWS/MONOLITHICS/NONPROD/preprod-demo-terraform-monolithic') {
   }
 }
 
-pipelineJob('AWS/INFRA/NONPROD/preprod-destroy-demo-monolithic') {
+pipelineJob('AWS/MONOLITHICS/NONPROD/preprod-destroy-demo-monolithic') {
   definition {
     cpsScm {
       scm {
@@ -83,7 +83,7 @@ pipelineJob('AWS/MONOLITHICS/NONPROD/dev-demo-terraform-monolithic') {
   }
 }
 
-pipelineJob('AWS/INFRA/NONPROD/dev-destroy-demo-monolithic') {
+pipelineJob('AWS/MONOLITHICS/NONPROD/dev-destroy-demo-monolithic') {
   definition {
     cpsScm {
       scm {
