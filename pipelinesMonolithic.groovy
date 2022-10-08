@@ -4,7 +4,7 @@ pipelineJob('AWS/MONOLITHIC/PROD/prod-demo-terraform-monolithic') {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-monolithic')
+            url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/Jenkinsfile")
           }
           branch('*/master')
@@ -15,13 +15,13 @@ pipelineJob('AWS/MONOLITHIC/PROD/prod-demo-terraform-monolithic') {
   }
 }
 
-pipelineJob('AWS/MONOLITHIC/PROD/preprod-destroy-demo-monolithic') {
+pipelineJob('AWS/MONOLITHIC/PROD/preprod-destroy-demo-terraform-monolithic') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-monolithic')
+            url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/destroy.groovy")
           }
           branch('*/release')
@@ -38,7 +38,7 @@ pipelineJob('AWS/MONOLITHIC/NOPROD/preprod-demo-terraform-monolithic') {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-monolithic')
+            url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/Jenkinsfile")
           }
           branch('*/master')
@@ -49,13 +49,13 @@ pipelineJob('AWS/MONOLITHIC/NOPROD/preprod-demo-terraform-monolithic') {
   }
 }
 
-pipelineJob('AWS/MONOLITHIC/NOPROD/preprod-destroy-demo-monolithic') {
+pipelineJob('AWS/MONOLITHIC/NOPROD/preprod-destroy-demo-terraform-monolithic') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-monolithic')
+            url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/destroy.groovy")
           }
           branch('*/release')
@@ -72,7 +72,7 @@ pipelineJob('AWS/MONOLITHIC/NOPROD/dev-demo-terraform-monolithic') {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-monolithic')
+            url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/Jenkinsfile")
           }
           branch('*/master')
@@ -83,13 +83,13 @@ pipelineJob('AWS/MONOLITHIC/NOPROD/dev-demo-terraform-monolithic') {
   }
 }
 
-pipelineJob('AWS/MONOLITHIC/NOPROD/dev-destroy-demo-monolithic') {
+pipelineJob('AWS/MONOLITHIC/NOPROD/dev-destroy-demo-terraform-monolithic') {
   definition {
     cpsScm {
       scm {
         git {
           remote {
-            url('https://github.com/rafstef/demo-monolithic')
+            url('https://github.com/rafstef/demo-terraform-monolithic')
             scriptPath("pipelines/destroy.groovy")
           }
           branch('*/release')
