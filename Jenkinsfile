@@ -18,6 +18,7 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
         }
+        // MONOLITHIC
         stage('FolderMonolithic') {
             steps {
                 jobDsl scriptText: 'job("DSL/folders-monolithic")'
@@ -36,6 +37,7 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
+        // MODULAR
         stage('FolderModular') {
             steps {
                 jobDsl scriptText: 'job("DSL/folders-modular")'
@@ -54,6 +56,25 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
+        // MICRO
+        stage('FolderInfra') {
+            steps {
+                jobDsl scriptText: 'job("DSL/folders-infra")'
+                jobDsl targets: ['foldersInfra.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+            }
+        }
+        stage('FolderNetworking') {
+            steps {
+                jobDsl scriptText: 'job("DSL/folders-networking")'
+                jobDsl targets: ['foldersNetworking.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+            }
+        }
         stage('pipelines-networking') {
             steps {
                 jobDsl scriptText: 'job("DSL/pipelines-networking")'

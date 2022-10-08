@@ -14,7 +14,6 @@ folder('AWS/INFRA'){
     displayName('INFRA')
     description('INFRA')
 }
-
 folder('AWS/INFRA/NOPROD'){
     displayName('NOPROD')
     description('NOPROD')
