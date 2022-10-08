@@ -15,7 +15,7 @@ pipelineJob('AWS/MODULAR/PROD/prod-demo-terraform-modular') {
   }
 }
 
-pipelineJob('AWS/MODULAR/PROD/preprod-destroy-demo-terraform-modular') {
+pipelineJob('AWS/MODULAR/PROD/prod-destroy-demo-terraform-modular') {
   definition {
     cpsScm {
       scm {
