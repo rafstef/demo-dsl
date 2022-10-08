@@ -57,19 +57,10 @@ pipeline {
             }
        }
         // MICRO
-        stage('FolderInfra') {
+        stage('FolderMicro') {
             steps {
-                jobDsl scriptText: 'job("DSL/folders-infra")'
-                jobDsl targets: ['foldersInfra.groovy'].join('\n'),
-                removedJobAction: 'DELETE',
-                removedViewAction: 'DELETE',
-                lookupStrategy: 'SEED_JOB'
-            }
-        }
-        stage('FolderNetworking') {
-            steps {
-                jobDsl scriptText: 'job("DSL/folders-networking")'
-                jobDsl targets: ['foldersNetworking.groovy'].join('\n'),
+                jobDsl scriptText: 'job("DSL/folders-micro")'
+                jobDsl targets: ['foldersMicro.groovy'].join('\n'),
                 removedJobAction: 'DELETE',
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
