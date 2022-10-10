@@ -15,7 +15,7 @@ pipelineJob('AWS/MONOLITHIC/PROD/prod-demo-terraform-monolithic') {
   }
 }
 
-pipelineJob('AWS/MONOLITHIC/PROD/preprod-destroy-demo-terraform-monolithic') {
+pipelineJob('AWS/MONOLITHIC/PROD/prod-destroy-demo-terraform-monolithic') {
   definition {
     cpsScm {
       scm {
