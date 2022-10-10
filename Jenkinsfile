@@ -37,6 +37,7 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
+       /*
         // MODULAR
         stage('FolderModular') {
             steps {
@@ -84,6 +85,7 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
+       */
     }
     post {
         // Clean after build
