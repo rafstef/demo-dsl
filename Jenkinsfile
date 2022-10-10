@@ -37,7 +37,7 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
-       /*
+       
         // MODULAR
         stage('FolderModular') {
             steps {
@@ -56,7 +56,7 @@ pipeline {
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
             }
-       }
+       }/*
         // MICRO
         stage('FolderMicro') {
             steps {
