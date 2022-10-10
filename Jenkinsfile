@@ -56,7 +56,7 @@ pipeline {
                 removedViewAction: 'DELETE',
                 lookupStrategy: 'SEED_JOB'
             }
-       }/*
+       }
         // MICRO
         stage('FolderMicro') {
             steps {
@@ -85,7 +85,7 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
-       */
+       
     }
     post {
         // Clean after build
