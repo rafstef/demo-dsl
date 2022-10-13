@@ -39,24 +39,24 @@ pipeline {
        }
        
         // MODULAR
-    //     stage('FolderModular') {
-    //         steps {
-    //             jobDsl scriptText: 'job("DSL/folders-modular")'
-    //             jobDsl targets: ['foldersModular.groovy'].join('\n'),
-    //             removedJobAction: 'DELETE',
-    //             removedViewAction: 'DELETE',
-    //             lookupStrategy: 'SEED_JOB'
-    //         }
-    //     }
-    //     stage('pipelines-modular') {
-    //         steps {
-    //             jobDsl scriptText: 'job("DSL/pipelines-modular")'
-    //             jobDsl targets: ['pipelinesModular.groovy'].join('\n'),
-    //             removedJobAction: 'DELETE',
-    //             removedViewAction: 'DELETE',
-    //             lookupStrategy: 'SEED_JOB'
-    //         }
-    //    }
+        stage('FolderModular') {
+            steps {
+                jobDsl scriptText: 'job("DSL/folders-modular")'
+                jobDsl targets: ['foldersModular.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+            }
+        }
+        stage('pipelines-modular') {
+            steps {
+                jobDsl scriptText: 'job("DSL/pipelines-modular")'
+                jobDsl targets: ['pipelinesModular.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+            }
+       }
     //     // MICRO
     //     stage('FolderMicro') {
     //         steps {
