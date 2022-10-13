@@ -58,33 +58,33 @@ pipeline {
             }
        }
     //     // MICRO
-    //     stage('FolderMicro') {
-    //         steps {
-    //             jobDsl scriptText: 'job("DSL/folders-micro")'
-    //             jobDsl targets: ['foldersMicro.groovy'].join('\n'),
-    //             removedJobAction: 'DELETE',
-    //             removedViewAction: 'DELETE',
-    //             lookupStrategy: 'SEED_JOB'
-    //         }
-    //     }
-    //     stage('pipelines-networking') {
-    //         steps {
-    //             jobDsl scriptText: 'job("DSL/pipelines-networking")'
-    //             jobDsl targets: ['pipelinesNetworking.groovy'].join('\n'),
-    //             removedJobAction: 'DELETE',
-    //             removedViewAction: 'DELETE',
-    //             lookupStrategy: 'SEED_JOB'
-    //         }
-    //    }
-    //     stage('pipelines-infra') {
-    //         steps {
-    //             jobDsl scriptText: 'job("DSL/pipelines-infra")'
-    //             jobDsl targets: ['pipelinesInfra.groovy'].join('\n'),
-    //             removedJobAction: 'DELETE',
-    //             removedViewAction: 'DELETE',
-    //             lookupStrategy: 'SEED_JOB'
-    //         }
-    //    }
+        stage('FolderMicro') {
+            steps {
+                jobDsl scriptText: 'job("DSL/folders-micro")'
+                jobDsl targets: ['foldersMicro.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+            }
+        }
+        stage('pipelines-networking') {
+            steps {
+                jobDsl scriptText: 'job("DSL/pipelines-networking")'
+                jobDsl targets: ['pipelinesNetworking.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+            }
+       }
+        stage('pipelines-infra') {
+            steps {
+                jobDsl scriptText: 'job("DSL/pipelines-infra")'
+                jobDsl targets: ['pipelinesInfra.groovy'].join('\n'),
+                removedJobAction: 'DELETE',
+                removedViewAction: 'DELETE',
+                lookupStrategy: 'SEED_JOB'
+            }
+       }
        
     }
     
