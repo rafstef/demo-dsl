@@ -37,57 +37,57 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
-       /*
+       
         // MODULAR
-        stage('FolderModular') {
-            steps {
-                jobDsl scriptText: 'job("DSL/folders-modular")'
-                jobDsl targets: ['foldersModular.groovy'].join('\n'),
-                removedJobAction: 'DELETE',
-                removedViewAction: 'DELETE',
-                lookupStrategy: 'SEED_JOB'
-            }
-        }
-        stage('pipelines-modular') {
-            steps {
-                jobDsl scriptText: 'job("DSL/pipelines-modular")'
-                jobDsl targets: ['pipelinesModular.groovy'].join('\n'),
-                removedJobAction: 'DELETE',
-                removedViewAction: 'DELETE',
-                lookupStrategy: 'SEED_JOB'
-            }
-       }
-        // MICRO
-        stage('FolderMicro') {
-            steps {
-                jobDsl scriptText: 'job("DSL/folders-micro")'
-                jobDsl targets: ['foldersMicro.groovy'].join('\n'),
-                removedJobAction: 'DELETE',
-                removedViewAction: 'DELETE',
-                lookupStrategy: 'SEED_JOB'
-            }
-        }
-        stage('pipelines-networking') {
-            steps {
-                jobDsl scriptText: 'job("DSL/pipelines-networking")'
-                jobDsl targets: ['pipelinesNetworking.groovy'].join('\n'),
-                removedJobAction: 'DELETE',
-                removedViewAction: 'DELETE',
-                lookupStrategy: 'SEED_JOB'
-            }
-       }
-        stage('pipelines-infra') {
-            steps {
-                jobDsl scriptText: 'job("DSL/pipelines-infra")'
-                jobDsl targets: ['pipelinesInfra.groovy'].join('\n'),
-                removedJobAction: 'DELETE',
-                removedViewAction: 'DELETE',
-                lookupStrategy: 'SEED_JOB'
-            }
-       }
+    //     stage('FolderModular') {
+    //         steps {
+    //             jobDsl scriptText: 'job("DSL/folders-modular")'
+    //             jobDsl targets: ['foldersModular.groovy'].join('\n'),
+    //             removedJobAction: 'DELETE',
+    //             removedViewAction: 'DELETE',
+    //             lookupStrategy: 'SEED_JOB'
+    //         }
+    //     }
+    //     stage('pipelines-modular') {
+    //         steps {
+    //             jobDsl scriptText: 'job("DSL/pipelines-modular")'
+    //             jobDsl targets: ['pipelinesModular.groovy'].join('\n'),
+    //             removedJobAction: 'DELETE',
+    //             removedViewAction: 'DELETE',
+    //             lookupStrategy: 'SEED_JOB'
+    //         }
+    //    }
+    //     // MICRO
+    //     stage('FolderMicro') {
+    //         steps {
+    //             jobDsl scriptText: 'job("DSL/folders-micro")'
+    //             jobDsl targets: ['foldersMicro.groovy'].join('\n'),
+    //             removedJobAction: 'DELETE',
+    //             removedViewAction: 'DELETE',
+    //             lookupStrategy: 'SEED_JOB'
+    //         }
+    //     }
+    //     stage('pipelines-networking') {
+    //         steps {
+    //             jobDsl scriptText: 'job("DSL/pipelines-networking")'
+    //             jobDsl targets: ['pipelinesNetworking.groovy'].join('\n'),
+    //             removedJobAction: 'DELETE',
+    //             removedViewAction: 'DELETE',
+    //             lookupStrategy: 'SEED_JOB'
+    //         }
+    //    }
+    //     stage('pipelines-infra') {
+    //         steps {
+    //             jobDsl scriptText: 'job("DSL/pipelines-infra")'
+    //             jobDsl targets: ['pipelinesInfra.groovy'].join('\n'),
+    //             removedJobAction: 'DELETE',
+    //             removedViewAction: 'DELETE',
+    //             lookupStrategy: 'SEED_JOB'
+    //         }
+    //    }
        
     }
-    */
+    
     post {
         // Clean after build
         always {
