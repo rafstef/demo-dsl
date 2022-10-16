@@ -18,7 +18,11 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
         }
-        // MONOLITHIC
+
+
+
+
+        ////////// MONOLITHIC ///////
         stage('FolderMonolithic') {
             steps {
                 jobDsl scriptText: 'job("DSL/folders-monolithic")'
@@ -37,8 +41,9 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
-       
-        // MODULAR
+
+        /*      
+        //////// MODULAR////////
         stage('FolderModular') {
             steps {
                 jobDsl scriptText: 'job("DSL/folders-modular")'
@@ -57,7 +62,10 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
-    //     // MICRO
+
+       */
+       /*
+         //////// MICRO //////////
         stage('FolderMicro') {
             steps {
                 jobDsl scriptText: 'job("DSL/folders-micro")'
@@ -85,6 +93,8 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
+       */
+       //////////////// close micro //////
        
     }
     
