@@ -41,7 +41,7 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
-        /*
+        
            
         //////// MODULAR////////
         stage('FolderModular') {
@@ -64,7 +64,7 @@ pipeline {
        }
 
        
-       
+       /*
          //////// MICRO //////////
         stage('FolderMicro') {
             steps {
