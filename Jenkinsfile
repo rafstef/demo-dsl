@@ -42,7 +42,7 @@ pipeline {
             }
        }
           
-        /*   
+        
         //////// MODULAR////////
         stage('FolderModular') {
             steps {
@@ -64,7 +64,7 @@ pipeline {
        }
 
        
-       */
+       
        /*
          //////// MICRO //////////
         stage('FolderMicro') {
