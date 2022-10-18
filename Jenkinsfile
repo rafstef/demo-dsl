@@ -65,7 +65,7 @@ pipeline {
 
        
        
-       /*
+       
          //////// MICRO //////////
         stage('FolderMicro') {
             steps {
@@ -94,7 +94,7 @@ pipeline {
                 lookupStrategy: 'SEED_JOB'
             }
        }
-       */
+       
        //////////////// close micro //////
        
     }
